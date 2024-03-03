@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-03T15:25:12 IST" name="Default suite" finished-at="2024-03-03T15:25:30 IST" duration-ms="18498">
+  <suite started-at="2024-03-03T16:15:58 IST" name="Default suite" finished-at="2024-03-03T16:16:30 IST" duration-ms="31794">
     <groups>
     </groups>
-    <test started-at="2024-03-03T15:25:12 IST" name="Default test" finished-at="2024-03-03T15:25:30 IST" duration-ms="18498">
-      <class name="Entrata.SeleniumProject.signInFunctionality">
-        <test-method signature="validateSignInFunctionality()[pri:0, instance:Entrata.SeleniumProject.signInFunctionality@6c1a5b54]" started-at="2024-03-03T15:25:12 IST" name="validateSignInFunctionality" finished-at="2024-03-03T15:25:30 IST" duration-ms="18431" status="PASS">
+    <test started-at="2024-03-03T16:15:58 IST" name="Default test" finished-at="2024-03-03T16:16:30 IST" duration-ms="31794">
+      <class name="Entrata.SeleniumProject.validateFooterLinks">
+        <test-method signature="validateTermsOfUseFooterLink()[pri:0, instance:Entrata.SeleniumProject.validateFooterLinks@6c1a5b54]" started-at="2024-03-03T16:15:58 IST" name="validateTermsOfUseFooterLink" finished-at="2024-03-03T16:16:30 IST" duration-ms="31724" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateSignInFunctionality -->
-      </class> <!-- Entrata.SeleniumProject.signInFunctionality -->
+        </test-method> <!-- validateTermsOfUseFooterLink -->
+      </class> <!-- Entrata.SeleniumProject.validateFooterLinks -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

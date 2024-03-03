@@ -1,6 +1,7 @@
 package Utilities;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,12 +16,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class CommonUtility {
 	static WebDriver driver=WebDriverManager.chromedriver().create();
 	
+	/*
+	 * Clicks on Sign in button.
+	 */
+	
 	public static void clickOnSignInButton()
 	{
 		
 		WebElement signInButton=driver.findElement(By.xpath("//div[@class='header-desktop-buttons hide-on-mobile']//a[text()='Sign In']"));
 		signInButton.click();
 	}
+	
+	/*
+	 * Used to navigate to Entrata site.
+	 */
 	
 	public static void navigateToEntrata()
 	{
@@ -29,6 +38,9 @@ public class CommonUtility {
 		driver.manage().window().maximize();
 	}
 	
+	/*
+	 * Verify when user enters invalid username and password in Property Manager Login The username and password provided are not valid. Please try again message is displayed
+	 */
 	public static void verifyPropertyManagementSignInFunctionality() 
 	{
 		String expectedResult="The username and password provided are not valid. Please try again.";
@@ -50,10 +62,31 @@ public class CommonUtility {
 		
 	}
 	
+	/*
+	 * Used to Accept the cookies.
+	 */
 	public static void acceptCookies()
 	{
 		WebElement acceptCookies=driver.findElement(By.xpath("//button[@aria-label='Accept cookies']"));
 		acceptCookies.click();
+	}
+	
+	/*
+	 * Navigate to Terms Of Use link present in the bottom of the website and verify on clicking on terms of use the url consist of terms of use in it.
+	 */
+	public static void navigateToTermsOfUse()  
+	{
+		
+		WebElement termsOfUse=driver.findElement(By.xpath("//a[@title='Entrata Inc. Terms of Use']"));
+		Actions a =new Actions(driver);
+		a.moveToElement(termsOfUse).click().build().perform();
+		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(20));
+		String termsOfUseUrl=driver.getCurrentUrl();
+		System.out.println("Current URL IS "+termsOfUseUrl);
+		Boolean termsOfUsePresentInLink=termsOfUseUrl.contains("terms-of-use");
+		Assert.assertTrue(termsOfUsePresentInLink, "URL Contains Terms Of Use in it");
+		
+		
 	}
 
 }
