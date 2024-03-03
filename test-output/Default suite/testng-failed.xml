@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Entrata.SeleniumProject.validateFooterLinks">
+      <class name="Entrata.SeleniumProject.validateEntrataLandingPageLogo">
         <methods>
-          <include name="validateTermsOfUseFooterLink"/>
+          <include name="validateEntrataLogo"/>
         </methods>
-      </class> <!-- Entrata.SeleniumProject.validateFooterLinks -->
+      </class> <!-- Entrata.SeleniumProject.validateEntrataLandingPageLogo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
