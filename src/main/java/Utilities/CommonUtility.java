@@ -44,12 +44,16 @@ public class CommonUtility {
 		password.sendKeys("P@ssw0rd");
 		WebElement signInButton=driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signInButton.click();
-		WebElement statusMessage=driver.findElement(By.xpath("//div[@class='login-errors']/p/i"));
+		WebElement statusMessage=driver.findElement(By.xpath("//div[@class='login-errors']/p"));
 		System.out.println(statusMessage.getText());
 		Assert.assertEquals(statusMessage.getText(), expectedResult);
 		
-
 	}
 	
+	public static void acceptCookies()
+	{
+		WebElement acceptCookies=driver.findElement(By.xpath("//button[@aria-label='Accept cookies']"));
+		acceptCookies.click();
+	}
 
 }

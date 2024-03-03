@@ -12,6 +12,7 @@ public class signInFunctionality {
 	{
 	
 	CommonUtility.navigateToEntrata();
+	CommonUtility.acceptCookies();
 	CommonUtility.clickOnSignInButton();
 	CommonUtility.verifyPropertyManagementSignInFunctionality();
 	
