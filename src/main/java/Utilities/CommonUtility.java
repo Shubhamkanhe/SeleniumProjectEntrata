@@ -1,6 +1,8 @@
 package Utilities;
 
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -87,6 +89,24 @@ public class CommonUtility {
 		Assert.assertTrue(termsOfUsePresentInLink, "URL Contains Terms Of Use in it");
 		
 		
+	}
+	/*
+	 * Naviagte to base camp and then click on entrata logo it should navigate us to entrata landing page.
+	 */
+	public static void verifyEntrataLogo()
+	{
+		WebElement baseCamp=driver.findElement(By.xpath("//div[@class='header-nav-item']/a[text()='Base Camp']"));
+		baseCamp.click();
+		Set<String> windows=driver.getWindowHandles();
+		Iterator<String> it=windows.iterator();
+		String parentId=it.next();
+		String childId=it.next();
+		driver.switchTo().window(childId);
+		WebElement entrataLogo=driver.findElement(By.xpath("//a[@href='https://www.entrata.com']"));
+		entrataLogo.click();
+		WebElement efficientOperationsHeader=driver.findElement(By.xpath("//div[@class='hero-left']/h1[text()='Enabling efficient operations']"));
+		Boolean result=efficientOperationsHeader.isDisplayed();
+		Assert.assertTrue(result, "Enabling Efficient Operations header got displayed");
 	}
 
 }
